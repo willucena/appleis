@@ -9,12 +9,13 @@ class SiteController extends Controller
 {
     public function index(Request $request)
     {
-        $perguntas = Pergunta::all();
+        $perguntas = Pergunta::whereNull('parent_id')->get();
         return view('index', compact('perguntas'));
     }
 
-    public function respostas(Request $request)
+    public function respostas($id)
     {
-        return view('respostas');
+        $dados= Pergunta::where('parent_id', $id)->get();
+        return view('respostas', compact('dados'));
     }
 }

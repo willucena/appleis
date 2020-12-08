@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\SiteController::class, 'index']);
-Route::get('/respostas', [\App\Http\Controllers\SiteController::class, 'respostas']);
+Route::get('/respostas/{id}', [\App\Http\Controllers\SiteController::class, 'respostas']);
 
 
 Route::group(['prefix' => 'admin'], function () {
