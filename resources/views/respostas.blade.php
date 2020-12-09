@@ -22,7 +22,7 @@
                                     @if($pergunta->status)
                                         @foreach($subCategorias as $subCategoria)
                                             @if($subCategoria->parent_id == $pergunta->id)
-                                                <h5><a href="{{ url('respostas/'.$subCategoria->id) }}">{{ $subCategoria->title }}</a></h5>
+                                                <h6><a href="{{ url('respostas/'.$subCategoria->id) }}" target="_blank">{{ $subCategoria->title }}</a></h6>
                                             @endif
                                         @endforeach
                                     @endif
