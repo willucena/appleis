@@ -38,7 +38,7 @@
 
                     <div id="collapse-{{$pergunta->id}}" class="collapse" data-parent="#accordionExample">
                         <div class="card-body">
-                            {{ $pergunta->description }}
+                            {!! $pergunta->description !!}
                             <br>
                             <br>
 
