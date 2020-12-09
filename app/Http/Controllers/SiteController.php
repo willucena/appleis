@@ -17,6 +17,8 @@ class SiteController extends Controller
     public function respostas($id)
     {
         $dados= Pergunta::where('id', $id)->get();
-        return view('respostas', compact('dados'));
+        $subCategorias = Pergunta::whereNotNull('parent_id')->get();
+
+        return view('respostas', compact('dados', 'subCategorias'));
     }
 }

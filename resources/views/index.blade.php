@@ -44,7 +44,9 @@
 
                             @if($pergunta->status)
                                 @foreach($subCategorias as $subCategoria)
-                                <h5><a href="{{ url('respostas/'.$subCategoria->id) }}">{{ $subCategoria->title }}</a></h5>
+                                    @if($subCategoria->parent_id == $pergunta->id)
+                                        <h5><a href="{{ url('respostas/'.$subCategoria->id) }}">{{ $subCategoria->title }}</a></h5>
+                                    @endif
                                 @endforeach
                             @endif
                         </div>
