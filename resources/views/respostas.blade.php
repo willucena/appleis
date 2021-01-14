@@ -18,14 +18,11 @@
                                 <div class="card-body">
                                     {!! $pergunta->description !!}
                                     <br>
-                                    <br>
-                                    @if($pergunta->status)
                                         @foreach($subCategorias as $subCategoria)
                                             @if($subCategoria->parent_id == $pergunta->id)
                                                 <h6><a href="{{ url('respostas/'.$subCategoria->id) }}" target="_blank">{{ $subCategoria->title }}</a></h6>
                                             @endif
                                         @endforeach
-                                    @endif
                                 </div>
                             </div>
                         </div>

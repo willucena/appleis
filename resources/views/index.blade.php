@@ -40,8 +40,6 @@
                         <div class="card-body">
                             {!! $pergunta->description !!}
                             <br>
-                            <br>
-
                             @if($pergunta->status)
                                 @foreach($subCategorias as $subCategoria)
                                     @if($subCategoria->parent_id == $pergunta->id)
