@@ -13,11 +13,9 @@
                                 <span class="title">{{ $pergunta->title }}</span>
                                 <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
                             </div>
-
                             <div id="collapse-{{$pergunta->id}}" class="collapse" data-parent="#accordionExample">
                                 <div class="card-body">
                                     {!! $pergunta->description !!}
-                                    <br>
                                         @foreach($subCategorias as $subCategoria)
                                             @if($subCategoria->parent_id == $pergunta->id)
                                                 <h6><a href="{{ url('respostas/'.$subCategoria->id) }}" target="_blank">{{ $subCategoria->title }}</a></h6>
