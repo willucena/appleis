@@ -27,6 +27,8 @@
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
         <a class="navbar-brand" href="/">{{ setting('site.title') }}</a>
+        <a class="navbar-brand" href="tel:0800 999 9999">Dúvidas ? Fale conosco: 0800 999 9999</a>
+
     </div>
 </nav>
 
