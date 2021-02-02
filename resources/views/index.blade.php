@@ -38,8 +38,7 @@
 
                     <div id="collapse-{{$pergunta->id}}" class="collapse" data-parent="#accordionExample">
                         <div class="card-body">
-                            {!! $pergunta->description !!}
-                            <br>
+
                             @if($pergunta->status)
                                 @foreach($subCategorias as $subCategoria)
                                     @if($subCategoria->parent_id == $pergunta->id)
@@ -47,6 +46,12 @@
                                     @endif
                                 @endforeach
                             @endif
+                            <br>
+                            {!! $pergunta->description !!}
+                                <?php $file = json_decode($pergunta->file) ?>
+                                @if(is_array($file) && count($file) >= 1)
+                                    <a target="_blank" href="{{ '/storage/'.json_decode($pergunta->file)[0]->download_link }}" download> {{ json_decode($pergunta->file)[0]->original_name }}</a>
+                                @endif
                         </div>
                     </div>
                 </div>
